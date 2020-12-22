@@ -19,3 +19,15 @@
 [submodule "src/third_party/sqlite_full"]
 	path = src/third_party/sqlite_full
 	url = https://github.com/sp-mishra/sqlite.git
+[submodule "src/third_party/libpg_query"]
+	path = src/third_party/libpg_query
+	url = https://github.com/lfittl/libpg_query.git
+[submodule "src/third_party/ejdb"]
+	path = src/third_party/ejdb
+	url = https://github.com/Softmotions/ejdb.git
+[submodule "src/third_party/iowow"]
+	path = src/third_party/iowow
+	url = https://github.com/Softmotions/iowow.git
+[submodule "src/third_party/whitedb"]
+	path = src/third_party/whitedb
+	url = https://github.com/priitj/whitedb.git

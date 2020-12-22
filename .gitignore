@@ -37,3 +37,4 @@ Release
 **/bin/*
 **/build-qt*/**
 **/qt.pro.*
+**/build

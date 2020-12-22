@@ -20,6 +20,9 @@ INCLUDE_DIRECTORIES(src/third_party/spdlog/include)
 INCLUDE_DIRECTORIES(src/third_party/fmt/include)
 INCLUDE_DIRECTORIES(src/third_party/sqlpp11/include)
 INCLUDE_DIRECTORIES(src/third_party/date/include)
+INCLUDE_DIRECTORIES(src/third_party/iowow)
+INCLUDE_DIRECTORIES(src/third_party/iowow/src)
+INCLUDE_DIRECTORIES(src/third_party/iowow/src/kv)
 
 FILE(GLOB
         SQLITE_C_SOURCE_FILES
@@ -55,13 +58,16 @@ FILE(
         "src/third_party/sqlpp11/include/sqlpp11/ppgen/tools/*.h"
 )
 
+ADD_SUBDIRECTORY(src/third_party/iowow)
+
 add_executable(
         bun
         ${SQLITE_C_SOURCE_FILES}
         ${RAPIDJSON_SOURCE_FILES}
         ${FMT_SOURCE_FILES}
-)
+        src/Main.cpp)
 
+target_link_libraries(bun iowow)
 if (WIN32)
     set(LEVELDB_PLATFORM_NAME LEVELDB_PLATFORM_WINDOWS)
     # TODO(cmumford): Make UNICODE configurable for Windows.
